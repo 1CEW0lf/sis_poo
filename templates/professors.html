@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Profesores</title>
+  </head>
+  <body>
+    <h1>Profesores</h1>
+    <table>
+      <tr>
+        <th>ID</th>
+        <th>Nombre</th>
+        <th>Apellido Paterno</th>
+        <th>Apellido Materno</th>
+      </tr>
+      {% for prof in professors_list %}
+      <tr>
+        <td>{{prof.id_professor}}</td>
+        <td>{{prof.nombre}}</td>
+        <td>{{prof.apellido_paterno}}</td>
+        <td>{{prof.apellido_materno}}</td>
+      </tr>
+      {% endfor %}
+    </table>
+    <a href="/new_professor">Crear profesor</a>
+  </body>
+</html>
