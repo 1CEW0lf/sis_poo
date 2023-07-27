@@ -1,15 +1,11 @@
-<!DOCTYPE html>
 <html>
-<head>
-    <title>Student List</title>
-</head>
-<body>
-    <h1>Student List</h1>
-    <ul>
-        {% for student in students %}
-            <li>{{ student["nombre"] + " " + student["apellido_paterno"] + " " + student["apellido_materno"] + " " + student["fecha_nacimiento"] + " " + student["matricula"]}}</li>
-        {% endfor %}
-    </ul>
-    <a href="/new_student">Add New Student</a>
-</body>
+  <head>
+    <title>Inicio</title>
+  </head>
+  <body>
+    <h1>Sistema de control escolar</h1>
+    <a href="/students">Estudiantes</a>
+    <a href="/professors">Profesores</a>
+    <a href="/courses">Materias</a>
+  </body>
 </html>
