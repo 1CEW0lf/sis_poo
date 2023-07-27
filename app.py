@@ -8,6 +8,10 @@ students = []
 def index():
     return render_template('index.html', students=students)
 
+@app.route("/")
+def students():
+    return render_template('students.')
+
 
 @app.route("/new_student", methods=['GET', 'POST'])
 def new_student():
@@ -23,7 +27,7 @@ def new_student():
             "matricula": request.form["matricula"]
         }
         students.append(estudiante)
-        return redirect('/')
+        return redirect('/students')
 
 if __name__ == '__main__':
     app.run(debug=True, port=8888)
