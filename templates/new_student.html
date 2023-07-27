@@ -1,0 +1,26 @@
+<html>
+    <head>
+        <title>Nuevo estudiante</title>
+    </head>
+    <body>
+        <h1>Nuevo estudiante</h1>
+        <form action="/new_student" method="POST">
+            <label>Nombre: </label>
+            <input type="text" name="nombre" required><br />
+            
+            <label>Apellido paterno: </label>
+            <input type="text" name="apellido_paterno" required><br />
+
+            <label>Apellido materno: </label>
+            <input type="text" name="apellido_materno" required><br />
+
+            <label>Fecha de nacimiento: </label>
+            <input type="date" name="fecha_nacimiento" required><br />
+
+            <label>Matrícula: </label>
+            <input type="text" name="matricula" required><br />
+
+            <input type="submit" value="Crear estudiante">
+        </form>
+    </body>
+</html>
