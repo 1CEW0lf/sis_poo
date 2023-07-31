@@ -1,26 +1,35 @@
-<html>
-    <head>
-        <title>Nuevo estudiante</title>
-    </head>
-    <body>
-        <h1>Nuevo estudiante</h1>
-        <form action="/new_student" method="POST">
-            <label>Nombre: </label>
-            <input type="text" name="nombre" required><br />
-            
-            <label>Apellido paterno: </label>
-            <input type="text" name="apellido_paterno" required><br />
+{% extends "base.html" %} {% block content %}
+<div class="container">
+  <h1>Nuevo estudiante</h1>
+  <form action="/new_student" method="POST">
+    <div class="mb-3">
+      <label for="exampleInputEmail1" class="form-label">Nombre</label>
+      <input type="text" name="nombre" class="form-control" />
+    </div>
+    <div class="mb-3">
+      <label for="exampleInputPassword1" class="form-label"
+        >Apellido paterno</label
+      >
+      <input type="text" name="apellido_paterno" class="form-control" />
+    </div>
+    <div class="mb-3">
+      <label for="exampleInputPassword1" class="form-label"
+        >Apellido materno</label
+      >
+      <input type="text" name="apellido_materno" class="form-control" />
+    </div>
+    <div class="mb-3">
+      <label for="exampleInputPassword1" class="form-label"
+        >Fecha de nacimiento</label
+      >
+      <input type="date" name="fecha_nacimiento" class="form-control" />
+    </div>
+    <div class="mb-3">
+      <label for="exampleInputPassword1" class="form-label">Matrícula</label>
+      <input type="text" name="matricula" class="form-control" />
+    </div>
 
-            <label>Apellido materno: </label>
-            <input type="text" name="apellido_materno" required><br />
-
-            <label>Fecha de nacimiento: </label>
-            <input type="date" name="fecha_nacimiento" required><br />
-
-            <label>Matrícula: </label>
-            <input type="text" name="matricula" required><br />
-
-            <input type="submit" value="Crear estudiante">
-        </form>
-    </body>
-</html>
+    <button type="submit" class="btn btn-primary">Submit</button>
+  </form>
+</div>
+{% endblock %}
