@@ -1,28 +1,27 @@
-<!DOCTYPE html>
-<html>
-  <head>
-    <title>Estudiantes</title>
-  </head>
-  <body>
-    <h1>Estudiantes</h1>
-    <table>
-      <tr>
-        <th>Matrícula</th>
-        <th>Nombre</th>
-        <th>Apellido Paterno</th>
-        <th>Apellido Materno</th>
-        <th>Fecha de nacimiento</th>
-      </tr>
-      {% for student in students_list %}
-      <tr>
-        <td>{{student.matricula}}</td>
-        <td>{{student.nombre}}</td>
-        <td>{{student.apellido_paterno}}</td>
-        <td>{{student.apellido_materno}}</td>
-        <td>{{student.fecha_nacimiento}}</td>
-      </tr>
-      {% endfor %}
-    </table>
-    <a href="/new_student">Add New Student</a>
-  </body>
-</html>
+{% extends "base.html" %} {% block content %}
+
+<div class="container">
+  <h1>Estudiantes</h1>
+  <table class="table table-striped">
+    <tr>
+      <th>Matrícula</th>
+      <th>Nombre</th>
+      <th>Apellido Paterno</th>
+      <th>Apellido Materno</th>
+      <th>Fecha de nacimiento</th>
+    </tr>
+    {% for student in students_list %}
+    <tr>
+      <td>{{student.matricula}}</td>
+      <td>{{student.nombre}}</td>
+      <td>{{student.apellido_paterno}}</td>
+      <td>{{student.apellido_materno}}</td>
+      <td>{{student.fecha_nacimiento}}</td>
+    </tr>
+    {% endfor %}
+  </table>
+  <a href="/new_student" type="button" class="btn btn-primary"
+    >Crear estudiante</a
+  >
+</div>
+{% endblock %}
