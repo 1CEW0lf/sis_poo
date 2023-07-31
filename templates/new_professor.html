@@ -1,0 +1,23 @@
+<html>
+  <head>
+    <title>Nuevo profesor</title>
+  </head>
+  <body>
+    <h1>Nuevo profesor</h1>
+    <form action="/new_professor" method="POST">
+      <label>Nombre: </label>
+      <input type="text" name="nombre" required /><br />
+
+      <label>Apellido paterno: </label>
+      <input type="text" name="apellido_paterno" required /><br />
+
+      <label>Apellido materno: </label>
+      <input type="text" name="apellido_materno" required /><br />
+
+      <label>ID: </label>
+      <input type="text" name="id_professor" required /><br />
+
+      <input type="submit" value="Crear profesor" />
+    </form>
+  </body>
+</html>
