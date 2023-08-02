@@ -24,7 +24,7 @@ def professors():
 
 @app.route("/courses")
 def courses():
-    return render_template('courses.html', courses_lists=courses_list)
+    return render_template('courses.html', courses_list=courses_list)
 
 @app.route("/new_student", methods=['GET', 'POST'])
 def new_student():
@@ -61,7 +61,7 @@ def new_professor():
 def new_course():
     if request.method == "GET":
         print("Método GET")
-        return render_template('new_subject.html')
+        return render_template('new_course.html')
     elif request.method == "POST":
         course = Course(
             request.form["codigo"],
