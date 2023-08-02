@@ -36,6 +36,21 @@ def new_student():
         }
         students.append(estudiante)
         return redirect('/students')
+    
+@app.route("/new_professor", methods=['GET', 'POST'])
+def new_professor():
+    if request.method == "GET":
+        print("Método GET")
+        return render_template('new_professor.html')
+    elif request.method == "POST":
+        professor = Professor(
+            request.form["nombre"],
+            request.form["apellido_paterno"],
+            request.form["apellido_materno"],
+            request.form["id_professor"]
+        )
+        professors_list.append(professor)
+        return redirect('/professors')
 
 if __name__ == '__main__':
     app.run(debug=True, port=8888)
