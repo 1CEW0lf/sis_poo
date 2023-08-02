@@ -9,7 +9,7 @@
       <th>Creditos</th>
       <th>Descripción</th>
     </tr>
-    {% for subject in subjects_list %}
+    {% for course in courses_list %}
     <tr>
       <td>{{subject.codigo_materia}}</td>
       <td>{{subject.nombre_materia}}</td>
@@ -18,7 +18,7 @@
     </tr>
     {% endfor %}
   </table>
-  <a href="/new_subject" type="button" class="btn btn-primary"
+  <a href="/new_course" type="button" class="btn btn-primary"
     >Crear Materia</a
   >
 </div>
