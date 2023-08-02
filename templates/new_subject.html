@@ -1,0 +1,27 @@
+{% extends "base.html" %} {% block content %}
+<div class="container">
+  <h1>Nueva materia</h1>
+  <form action="/new_materia" method="POST">
+    <div class="mb-3">
+        <label for="exampleInputEmail1" class="form-label">Código</label>
+        <input type="text" name="nombre" class="form-control" />
+      </div>
+    <div class="mb-3">
+      <label for="exampleInputEmail1" class="form-label">Nombre</label>
+      <input type="text" name="nombre" class="form-control" />
+    </div>
+    <div class="mb-3">
+      <label for="exampleInputPassword1" class="form-label"
+        >Creditos</label
+      >
+      <input type="text" name="apellido_paterno" class="form-control" />
+    </div>
+    <div class="mb-3">
+      <label for="exampleInputPassword1" class="form-label">Descripción</label>
+      <input type="text" name="matricula" class="form-control" />
+    </div>
+
+    <button type="submit" class="btn btn-primary">Submit</button>
+  </form>
+</div>
+{% endblock %}

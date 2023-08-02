@@ -1,0 +1,25 @@
+{% extends "base.html" %} {% block content %}
+
+<div class="container">
+  <h1>Materias</h1>
+  <table class="table table-striped">
+    <tr>
+      <th>Código</th>
+      <th>Nombre</th>
+      <th>Creditos</th>
+      <th>Descripción</th>
+    </tr>
+    {% for subject in subjects_list %}
+    <tr>
+      <td>{{subject.codigo_materia}}</td>
+      <td>{{subject.nombre_materia}}</td>
+      <td>{{subject.creditos_materia}}</td>
+      <td>{{subject.descripcion_materia}}</td>
+    </tr>
+    {% endfor %}
+  </table>
+  <a href="/new_subject" type="button" class="btn btn-primary"
+    >Crear Materia</a
+  >
+</div>
+{% endblock %}
