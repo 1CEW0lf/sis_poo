@@ -6,6 +6,7 @@ app = Flask(__name__)
 
 students_list = []
 professors_list = []
+subjects_list = []
 
 @app.route("/")
 def index():
@@ -20,6 +21,10 @@ def students():
 @app.route("/professors")
 def professors():
     return render_template('professors.html', professors_list=professors_list)
+
+@app.route("/subjects")
+def subjects():
+    return render_template('subjects.html', subjects_lists=subjects_list)
 
 @app.route("/new_student", methods=['GET', 'POST'])
 def new_student():
@@ -52,5 +57,19 @@ def new_professor():
         professors_list.append(professor)
         return redirect('/professors')
 
+@app.route("/new_subject", methods=['GET', 'POST'])
+def new_subject():
+    if request.method == "GET":
+        print("Método GET")
+        return render_template('new_professor.html')
+    elif request.method == "POST":
+        professor = Professor(
+            request.form["nombre"],
+            request.form["apellido_paterno"],
+            request.form["apellido_materno"],
+            request.form["id_professor"]
+        )
+        professors_list.append(professor)
+        return redirect('/professors')
 if __name__ == '__main__':
     app.run(debug=True, port=8888)
