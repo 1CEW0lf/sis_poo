@@ -1,6 +1,7 @@
 from flask import Flask, render_template, request, redirect
 from entities.student import Student
 from entities.professor import Professor
+from entities.course import Course
 
 app = Flask(__name__)
 
@@ -63,13 +64,13 @@ def new_course():
         print("Método GET")
         return render_template('new_course.html')
     elif request.method == "POST":
-        course = Course(
+        materia = Course(
             request.form["codigo"],
             request.form["nombre"],
             request.form["creditos"],
             request.form["descripcion"]
         )
-        courses_list.append(course)
+        courses_list.append(materia)
         return redirect('/courses')
     
 if __name__ == '__main__':
