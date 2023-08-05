@@ -3,24 +3,21 @@
   <h1>Nueva materia</h1>
   <form action="/new_course" method="POST">
     <div class="mb-3">
-        <label for="exampleInputEmail1" class="form-label">Código</label>
-        <input type="text" name="codigo" class="form-control" />
-      </div>
+      <label for="exampleInputPassword1" class="form-label">ID</label>
+      <input type="text" name="id_materia" class="form-control" />
+    </div>
     <div class="mb-3">
       <label for="exampleInputEmail1" class="form-label">Nombre</label>
       <input type="text" name="nombre" class="form-control" />
     </div>
     <div class="mb-3">
       <label for="exampleInputPassword1" class="form-label"
-        >Creditos</label>
+        >Créditos</label
+      >
       <input type="text" name="creditos" class="form-control" />
     </div>
-    <div class="mb-3">
-      <label for="exampleInputPassword1" class="form-label">Descripción</label>
-      <input type="text" name="descripcion" class="form-control" />
-    </div>
 
-    <button type="submit" class="btn btn-primary">Submit</button>
+    <button type="submit" class="btn btn-primary">Crear</button>
   </form>
 </div>
 {% endblock %}
