@@ -11,8 +11,11 @@ courses_list = []
 
 @app.route("/")
 def index():
-    return render_template('index.html', students=students)
+    return render_template('index.html')
 
+@app.route("/courses")
+def courses():
+    return render_template('courses.html', courses_list=courses_list)
 
 @app.route("/students")
 def students():
@@ -23,9 +26,6 @@ def students():
 def professors():
     return render_template('professors.html', professors_list=professors_list)
 
-@app.route("/courses")
-def courses():
-    return render_template('courses.html', courses_list=courses_list)
 
 @app.route("/new_student", methods=['GET', 'POST'])
 def new_student():
@@ -33,15 +33,29 @@ def new_student():
         print("Método GET")
         return render_template('new_student.html')
     elif request.method == "POST":
-        estudiante = {
-            "nombre": request.form["nombre"],
-            "apellido_paterno": request.form["apellido_paterno"],
-            "apellido_materno": request.form["apellido_materno"],
-            "fecha_nacimiento": request.form["fecha_nacimiento"],
-            "matricula": request.form["matricula"]
-        }
-        students.append(estudiante)
+        estudiante = Student(
+            request.form["nombre"],
+            request.form["apellido_paterno"],
+            request.form["apellido_materno"],
+            request.form["fecha_nacimiento"],
+            request.form["matricula"]
+        )
+        students_list.append(estudiante)
         return redirect('/students')
+
+@app.route("/new_course", methods=['GET', 'POST'])
+def new_course():
+    if request.method == "GET":
+        print("Método GET")
+        return render_template('new_course.html')
+    elif request.method == "POST":
+        materia = Course(
+            request.form["id_materia"],
+            request.form["nombre"],
+            request.form["creditos"]
+        )
+        courses_list.append(materia)
+        return redirect('/courses')
     
 @app.route("/new_professor", methods=['GET', 'POST'])
 def new_professor():
@@ -53,25 +67,12 @@ def new_professor():
             request.form["nombre"],
             request.form["apellido_paterno"],
             request.form["apellido_materno"],
+            request.form["fecha_nacimiento"],
             request.form["id_professor"]
         )
         professors_list.append(professor)
         return redirect('/professors')
 
-@app.route("/new_course", methods=['GET', 'POST'])
-def new_course():
-    if request.method == "GET":
-        print("Método GET")
-        return render_template('new_course.html')
-    elif request.method == "POST":
-        materia = Course(
-            request.form["codigo"],
-            request.form["nombre"],
-            request.form["creditos"],
-            request.form["descripcion"]
-        )
-        courses_list.append(materia)
-        return redirect('/courses')
-    
+
 if __name__ == '__main__':
     app.run(debug=True, port=8888)
