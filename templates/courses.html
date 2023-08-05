@@ -4,22 +4,20 @@
   <h1>Materias</h1>
   <table class="table table-striped">
     <tr>
-      <th>Código</th>
+      <th>ID</th>
       <th>Nombre</th>
-      <th>Creditos</th>
-      <th>Descripción</th>
+      <th>Créditos</th>
     </tr>
     {% for course in courses_list %}
     <tr>
-      <td>{{course.codigo_materia}}</td>
-      <td>{{course.nombre_materia}}</td>
-      <td>{{course.creditos_materia}}</td>
-      <td>{{course.descripcion_materia}}</td>
+      <td>{{course.id_materia}}</td>
+      <td>{{course.nombre}}</td>
+      <td>{{course.creditos}}</td>
     </tr>
     {% endfor %}
   </table>
   <a href="/new_course" type="button" class="btn btn-primary"
-    >Crear Materia</a
+    >Crear materia</a
   >
 </div>
 {% endblock %}
