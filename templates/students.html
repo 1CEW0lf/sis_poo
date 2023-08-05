@@ -6,17 +6,13 @@
     <tr>
       <th>Matrícula</th>
       <th>Nombre</th>
-      <th>Apellido Paterno</th>
-      <th>Apellido Materno</th>
-      <th>Fecha de nacimiento</th>
+      <th>Edad</th>
     </tr>
     {% for student in students_list %}
     <tr>
       <td>{{student.matricula}}</td>
-      <td>{{student.nombre}}</td>
-      <td>{{student.apellido_paterno}}</td>
-      <td>{{student.apellido_materno}}</td>
-      <td>{{student.fecha_nacimiento}}</td>
+      <td>{{student.nombre_completo()}}</td>
+      <td>{{ student.calcular_edad() }}</td>
     </tr>
     {% endfor %}
   </table>

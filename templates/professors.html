@@ -6,20 +6,18 @@
     <tr>
       <th>ID</th>
       <th>Nombre</th>
-      <th>Apellido Paterno</th>
-      <th>Apellido Materno</th>
+      <th>Edad</th>
     </tr>
-    {% for prof in professors_list %}
+    {% for profesor in professors_list %}
     <tr>
-      <td>{{prof.id_professor}}</td>
-      <td>{{prof.nombre}}</td>
-      <td>{{prof.apellido_paterno}}</td>
-      <td>{{prof.apellido_materno}}</td>
+      <td>{{profesor.id_professor}}</td>
+      <td>{{profesor.nombre_completo()}}</td>
+      <td>{{profesor.calcular_edad()}}</td>
     </tr>
     {% endfor %}
   </table>
   <a href="/new_professor" type="button" class="btn btn-primary"
     >Crear profesor</a
   >
-  </div>
-  {% endblock %}
+</div>
+{% endblock %}
