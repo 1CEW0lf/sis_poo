@@ -1,6 +1,5 @@
 class Course:
-    def __init__(self, codigo, nombre, creditos, descripcion):
-        self.codigo_materia = codigo
-        self.nombre_materia = nombre
-        self.creditos_materia = creditos
-        self.descripcion_materia = descripcion
+    def __init__(self, id_materia, nombre, creditos):
+        self.nombre = nombre
+        self.id_materia = id_materia
+        self.creditos = creditos
